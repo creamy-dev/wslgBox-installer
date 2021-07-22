@@ -1,0 +1,2 @@
+# wslgBox-installer
+Installs wslgBox
