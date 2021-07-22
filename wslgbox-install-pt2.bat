@@ -1,5 +1,5 @@
 @echo off
-set VERSION=1.0.0
+set VERSION=1.0.1
 title wslgBox Installer v%VERSION%
 :: BatchGotAdmin
 :-------------------------------------
