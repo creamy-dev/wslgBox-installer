@@ -46,7 +46,7 @@ echo Welcome to wslgBox installer! This will install wslgBox.
 echo All you need for this version is Windows 10 Insider Preview build 21362+.
 echo Press any key to continue if you meet those requirements.
 echo NOTE: This will reboot your computer.
-pause > null
+pause > nul
 echo Installing wsl1. (1/3)
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
