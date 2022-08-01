@@ -47,9 +47,8 @@ echo All you need for this version is Windows 10 Insider Preview build 21362+.
 echo Press any key to continue if you meet those requirements.
 echo NOTE: This will reboot your computer.
 pause > nul
-echo Installing wsl1. (1/3)
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+echo Installing wsl. (1/3)
+wsl --install -d Ubuntu
 curl https://raw.githubusercontent.com/creamy-dev/wslgBox-installer/main/wslgbox-install-pt2.bat > "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup\wslgbox-installer.bat"
 shutdown /r /t 15 -c "wslgBox: Required reboot in 15 seconds to finish installation."
 del %0 && exit
