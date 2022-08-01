@@ -42,21 +42,10 @@ echo ----------------
 echo wslgBox installer v%VERSION% by creamy-dev
 echo de's on wslg
 echo ----------------
-echo Installing wsl2... (2/3)
-del wsl2.msi 2> nul
-curl https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi --output wsl2.msi
-msiexec /qn /i wsl2.msi
+echo Setting up... (2/3)
 wsl --set-default-version 2
-wsl --update
-echo Installing Ubuntu... (3/3)
-curl https://wsldownload.azureedge.net/Ubuntu_2004.2020.424.0_x64.appx --output ubuntu.appx
-powershell Add-AppxPackage .\ubuntu.appx
-echo Deleting temp files...
-del wsl2.msi 2> nul
-del ubuntu.appx 2> nul
-echo Installing rootfs...
 ubuntu2004.exe install
-echo Installing wslgBox...
+echo Installing wslgBox... (3/3)
 wslconfig /setdefault Ubuntu-20.04
 wsl /bin/bash -c "$(cd ~ && curl https://raw.githubusercontent.com/creamy-dev/wslgBox/main/wslgbox --output wslgbox && chmod +x wslgbox)"
 wsl /bin/bash -c "cd ~ && ./wslgbox --install"
